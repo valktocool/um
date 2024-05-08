@@ -1,117 +1,191 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<script src="./uhoh.js"></script>
+<script src="./anti-inspect-element.js"></script>
 
 <head>
-    <meta content="Private Biolink" property="og:title">
-     <meta property="og:site_name" content="Burial.wtf">
-    <meta content="images/jxmo7ny67x771.gif" property="og:image">
-    <meta content="#df0704" data-react-helmet="true" name="theme-color">
-
-    <meta content="Sway" property="og:title">
-    <meta content property="og:description">
-    <meta content="images/jxmo7ny67x771.gif" property="og:image">
-    <meta content="#000000" data-react-helmet="true" name="theme-color">
-
-    <link rel="icon" type="image/x-icon" href="https://images-ext-1.discordapp.net/external/_OlXFGyg3L3O6mwp4aSK8MvnPNLlWeKkcohVlDVbYFM/%3Fsize%3D/https/cdn.discordapp.com/emojis/1214782782727782401.gif">
-    <title>Burial</title>
-    <link rel="stylesheet" href="css/main.css">
-      <script src="https://eslut.ing/js/script.js"></script>
-    <script src="js/script.js"></script>
-    <script src="./anti-inspect-element.js"></script>
-     <script src="https://eslut.ing/js/funny.js"></script>
-</head>
-
-<body>
-    <div class="overlay" id="overlay">
-        <div class="proceed-button" onclick="removeOverlay(); playMusic()">Press Me Nigga</div>
-    </div>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+    <script src="snowstorm.js"></script>
+    <title>txt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="https://cdn.discordapp.com/emojis/1228445021590786179.gif?size=96&quality=lossless">
     <style>
         @font-face {
-            font-family: 'Help Me';
-            src: url('fonts/HelpMe.ttf') format('truetype');
+            font-family: 'dpcomic';
+            src: url('dpcomic.ttf') format('truetype');
         }
 
-        @font-face {
-            font-family: 'Cityburn';
-            src: url('fonts/cityburn.ttf') format('truetype');
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: 'dpcomic', monospace;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
 
-        @font-face {
-            font-family: 'artifact';
-            src: url('fonts/artifact.ttf') format('truetype');
-        }
-    </style>
-
-    <div class="container">
-        <h1>Burial.wtf</h1>
-        <p>Private Biolink</p>
-    </div><noscript>You must enable JavaScript to see this text.</noscript>
-    <div id="clock"></div>
-    <script>
-        function removeOverlay() {
-            var overlay = document.getElementById("overlay");
-            overlay.style.display = "none";
+        #container {
+            text-align: center;
+            display: none;
         }
 
-        function updateClock() {
-            const now = new Date();
-            const options = {
-                hour12: true,
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            const formattedTime = now.toLocaleTimeString('en-US', options);
-            document.getElementById('clock').textContent = formattedTime;
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            max-width: 150px;
         }
 
-        setInterval(updateClock, 1000);
+        #madara-text {
+            font-size: clamp(30px, 10vw, 40px);
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
 
-        function createBloodSparks() {
-            const numSparks = Math.floor(Math.random() * 5) + 1;
-            for (let i = 0; i < numSparks; i++) {
-                const bloodSpark = document.createElement('div');
-                bloodSpark.classList.add('blood-spark');
-                bloodSpark.style.left = `${Math.random() * window.innerWidth}px`;
-                document.body.appendChild(bloodSpark);
+        #footer {
+            font-size: clamp(16px, 10vw, 24px);
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
 
-                setTimeout(() => {
-                    bloodSpark.remove();
-                }, 6000);
+        .telegram-icon,
+        .discord-icon,
+        .globe-icon {
+            font-size: 32px;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            margin: 8px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
             }
         }
 
-        setInterval(createBloodSparks, 1000);
-    </script>
-    <script>
-        function playMusic() {
-            var audio = new Audio('slurslol.mp3');
-            audio.play();
+        @keyframes blink-caret {
+            from,
+            to {
+                border-right: 2px solid rgba(255, 255, 255, 0.8)
+            }
         }
-    </script>
 
-    <div class="snowflakes fade-in">
-        <div class="snowflake">⛥</div>
-        <div class="snowflake">†</div>
-        <div class="snowflake">⛥</div>
-        <div class="snowflake">†</div>
-        <div class="snowflake">⛥</div>
-        <div class="snowflake">†</div>
-        <div class="snowflake">⛥</div>
-        <div class="snowflake">†</div>
-        <div class="snowflake">⛥</div>
-        <div class="snowflake">†</div>
-        <div class="snowflake">⛥</div>
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.8);
+            white-space: nowrap;
+            animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        #click-me {
+            color: white;
+            font-size: clamp(40px, 10vw, 60px);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img src="https://media.discordapp.net/attachments/1231797514311700571/1237557237690662973/aa7c657df4c11fc404f003812cd519ed.png?ex=663c147e&is=663ac2fe&hm=9f9f6873a48c071ca044ec18fa9b28abc5e6d608dbcef3b18ec2837ab5f9b7b0&=&format=webp&quality=lossless" alt="Profile Picture">
+        <div id="madara-text">Dead</div>
+        <div id="footer">
+            <span id="typing-text" class="typewriter"></span>
+        </div>
+        <div class="dabox">
+            <a href="https://t.me/clclclclclclclclclclclc"><button><i class="fab fa-telegram telegram-icon"></i></button></a>
+            <a href="https://www.roblox.com/users/4824936506/profile"><button><i class="fab fa-discord discord-icon"></i></button></a>
+            <a href="https://www.instagram.com/rechantss"><button><i class="fa fa-globe globe-icon" aria-hidden="true"></i></button></a>
+        </div>
     </div>
 
-    <div class="blood-spark" style="left: 1003.77px;"></div>
-    <div class="blood-spark" style="left: 1861.42px;"></div>
-    <div class="blood-spark" style="left: 1011.6px;"></div>
-    <div class="blood-spark" style="left: 1878.73px;"></div>
-    <div class="blood-spark" style="left: 601.029px;"></div>
+    <div id="click-me" onclick="showContent()">♱</div>
+
+    <audio id="backgroundMusic">
+        <source src="madara.mp3" type="audio/mpeg">
+        <source src="music.ogg" type="audio/ogg">
+    </audio>
+
     <script>
-        var titles = ["@", "@B", "@Bu", "@Bur", "@Buri", "@Buria", "@Burial", "@Burial", "@Burial", "@Burial", "@Buria", "@Buri", "@Bur", "@Bu", "@B", ">_<"];
+        function showContent() {
+            document.getElementById("container").style.display = "block";
+            document.getElementById("click-me").style.display = "none";
+
+            const audio = document.getElementById("backgroundMusic");
+            audio.play();
+        }
+
+        const textElement = document.getElementById("typing-text");
+        const texts = ["@Dead", "burial.wtf", ">_<"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                textElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, 50);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
+    <script>
+        var titles = ["@", "@governmenter", "@Sway!", "1# Biolink", "Burial"];
         var currentTitleIndex = 0;
 
         function changeTitle() {
